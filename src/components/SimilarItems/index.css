@@ -1,0 +1,12 @@
+.sim-list {
+  background-color: #202020;
+  list-style-type: none;
+  width: 30%;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+}
+.sim-logo {
+  height: 60px;
+  width: 60px;
+}

@@ -1,0 +1,36 @@
+.retry-button {
+  width: 120px;
+  height: 40px;
+  padding: 5px 30px 5px 30px;
+  background-color: #6366f1;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  font-family: 'Bree Serif';
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .retry-button {
+    padding: 0px;
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+  }
+}
+
+.not-found-bg-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #020202;
+  color: #fff;
+  height: 100vh;
+}
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+}

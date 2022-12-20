@@ -1,0 +1,52 @@
+.job-item-bg-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #020202;
+  color: #fff;
+  padding-left: 4vw;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.jobs-items-bg-container::-webkit-scrollbar {
+  display: none;
+}
+.left {
+  margin-left: 2vw;
+}
+.skill-container {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.life-desc {
+  margin-left: 2vw;
+  width: 60%;
+}
+.life-image {
+  margin-left: 3vw;
+}
+.ul-sim-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.left-1 {
+  margin-left: 10px;
+}
+.logo {
+  height: 80px;
+}
+h1 {
+  font-size: 18px;
+  font-family: 'Bree serif';
+  font-weight: 500;
+}
+p {
+  margin-left: 5px;
+  margin-right: 2px;
+  font-size: 16px;
+}
+* {
+  font-family: 'Roboto';
+}

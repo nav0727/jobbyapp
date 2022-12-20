@@ -1,0 +1,10 @@
+.skill-list-container {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  padding: 20px;
+}
+.skill-name {
+  margin-left: 15px;
+  font-size: 15px;
+}
