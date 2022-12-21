@@ -20,8 +20,8 @@
 .jobs-filter-container {
   display: flex;
   flex-direction: column;
-  width: 20vw;
-  margin-left: 2vw;
+  width: 20%;
+  /* margin-left: 2vw; */
 }
 
 .profile-container {
@@ -30,31 +30,42 @@
   background-size: cover;
   margin-top: 4vh;
   margin-bottom: 5vh;
-
+  margin-left: 20px;
   color: #64748b;
 }
 
 .hr-line {
   background-color: #64748b;
   width: 95%;
+  margin-left: 2%;
   align-self: left;
+}
+
+@media screen and (max-width: 767px) {
+  .filter-heading {
+    font-size: 10px;
+    margin-left: 2%;
+  }
 }
 
 .filter-container-check {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  align-items: left;
 }
 
-.check-heading {
+.filter-heading {
   font-size: 16px;
+  margin-left: 2vw;
   font-family: 'Roboto';
 }
 label {
-  margin-left: 1vw;
+  margin-left: 1%;
   padding: 4px;
 }
 .search-container {
-  margin-left: 2vw;
+  margin-left: 2%;
 
   display: flex;
   color: #fff;
@@ -68,6 +79,14 @@ label {
 .search-bar {
   background-color: transparent;
   color: #fff;
+}
+.loader-container {
+  display: flex;
+  width: 100%;
+  height: 70vh;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 .search-icon {
   background-color: transparent;
@@ -86,4 +105,9 @@ label {
 }
 .jobs-container::-webkit-scrollbar {
   display: none;
+}
+.ul-list-con {
+  list-style-type: none;
+  width: 100%;
+  padding-left: 20px;
 }
