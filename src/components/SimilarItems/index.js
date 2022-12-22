@@ -18,7 +18,11 @@ const SimilarJobItem = props => {
   return (
     <li className="sim-list">
       <div className="row-container">
-        <img src={simCompanyLogo} alt="website logo" className="sim-logo" />
+        <img
+          src={simCompanyLogo}
+          alt="similar job company logo"
+          className="sim-logo"
+        />
         <div className="left">
           <p>{simTitle}</p>
           <div className="row-container">

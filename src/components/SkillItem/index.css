@@ -1,8 +1,18 @@
 .skill-list-container {
   display: flex;
-  width: 200px;
+  width: 20%;
   align-items: center;
+  height: 10%;
+  background-color: #2c364c;
   padding: 20px;
+  margin: 5px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  border: 1px saddlebrown;
+}
+.skill-list-container:hover {
+  border: 1px dotted goldenrod;
 }
 .skill-name {
   margin-left: 15px;

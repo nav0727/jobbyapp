@@ -96,7 +96,10 @@ class Jobs extends Component {
         className="not-image"
       />
       <h1>No Jobs Found</h1>
-      <p>We could not find any jobs.Try another filter. </p>
+      <p>We could not find any jobs. Try other filters</p>
+      <button type="button" onClick={this.profileFail}>
+        Retry
+      </button>
     </div>
   )
 
@@ -184,7 +187,7 @@ class Jobs extends Component {
     const {name, profileAvatar, ShortBio} = profileList
     return (
       <div className="profile-container">
-        <img src={profileAvatar} alt="profile Avatar" />
+        <img src={profileAvatar} alt="profile" />
         <h1>{name}</h1>
         <p>{ShortBio}</p>
       </div>
@@ -266,9 +269,10 @@ class Jobs extends Component {
               />
               <button
                 type="button"
-                data-testid="searchButton"
+                testid="searchButton"
                 className="search-btn"
                 onClick={this.onSearchBtn}
+                value={searchInput}
               >
                 <BsSearch className="search-icon" />
               </button>
@@ -291,7 +295,7 @@ class Jobs extends Component {
         alt="failure view"
       />
       <h1>Oops! Something Went Wrong</h1>
-      <p>We cannot seem to find the page you are looking for.</p>
+      <p>We cannot seem to find the page you are looking for</p>
 
       <button type="button" className="find-button" onClick={this.onSearchBtn}>
         Retry

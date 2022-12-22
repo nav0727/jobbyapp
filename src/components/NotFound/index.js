@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import Header from '../Header'
 
 import './index.css'

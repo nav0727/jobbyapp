@@ -1,4 +1,6 @@
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
+import {Link} from 'react-router-dom'
 
 import {HiLocationMarker} from 'react-icons/hi'
 import {AiFillStar} from 'react-icons/ai'
@@ -10,15 +12,30 @@ import SkillItem from '../SkillItem'
 import SimilarJobItem from '../SimilarItems'
 
 import './index.css'
+import Header from '../Header'
+
+const apiConstStatus = {
+  success: 'SUCCESS',
+  failure: 'FAILURE',
+  inProgress: 'IN_PROGRESS',
+  initial: 'INITIAL',
+}
 
 class SimilarJobs extends Component {
-  state = {jobsList: [], skillsList: [], life: [], similarJobList: []}
+  state = {
+    jobsList: [],
+    skillsList: [],
+    life: [],
+    similarJobList: [],
+    apiStatus: apiConstStatus.initial,
+  }
 
   componentDidMount() {
     this.getItemData()
   }
 
   getItemData = async () => {
+    this.setState({apiStatus: apiConstStatus.inProgress})
     const {match} = this.props
     const {params} = match
     const {id} = params
@@ -83,8 +100,9 @@ class SimilarJobs extends Component {
         similarJobList: similarJob,
         skillsList: skill,
         life: lifeAtCompany,
+        apiStatus: apiConstStatus.success,
       })
-    }
+    } else this.setState({apiStatus: apiConstStatus.failure})
   }
 
   renderJobItem = () => {
@@ -154,7 +172,7 @@ class SimilarJobs extends Component {
             </a>
           </div>
           <p>{jobDescription}</p>
-          <h1>skills</h1>
+          <h1>Skills</h1>
           <ul className="skill-container">
             {skillsList.map(eachItem => (
               <SkillItem key={eachItem.id} skillItem={eachItem} />
@@ -165,10 +183,10 @@ class SimilarJobs extends Component {
         <h1> Life at Company</h1>
         <div className="row-container">
           <p className="life-desc"> {description}</p>
-          <img src={lifeLogo} alt="life_at_company" className="life-image" />
+          <img src={lifeLogo} alt="life at company" className="life-image" />
         </div>
 
-        <hi>Similar Job</hi>
+        <hi>Similar Jobs</hi>
         <ul className="ul-sim-list">
           {similarJobList.map(eachList => (
             <SimilarJobItem key={eachList.id} similarJobItem={eachList} />
@@ -178,8 +196,69 @@ class SimilarJobs extends Component {
     )
   }
 
+  renderProgress = () => (
+    // testid="loader"
+    // <Loader type="Circles" color="blue" height="50" width="50" />
+    //   <Loader type="Ball-Triangle" color="green" height="50" width="50" />
+    // eslint-disable-next-line react/no-unknown-property
+    <div className="loader-container bg" testid="loader">
+      <Loader type="ThreeDots" color="blue" height="50" width="50" />
+    </div>
+  )
+
+  renderFailure = () => (
+    <div className="failure">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+        alt="failure view"
+      />
+      <h1>Oops! Something Went Wrong</h1>
+      <p>We cannot seem to find the page you are looking for</p>
+
+      <Link to="/jobs">
+        <button type="button" className="find-button">
+          Retry
+        </button>
+      </Link>
+    </div>
+  )
+
+  renderAllItems = () => {
+    const {apiStatus} = this.state
+    switch (apiStatus) {
+      case apiConstStatus.success:
+        return this.renderJobItem()
+      case apiConstStatus.failure:
+        return this.renderFailure()
+      case apiConstStatus.inProgress:
+        return this.renderProgress()
+      default:
+        return null
+    }
+  }
+
+  renderNotFound = () => (
+    <div className="not-found">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
+        alt="no jobs"
+        className="not-image"
+      />
+      <h1>No Jobs Found</h1>
+      <p>We could not find any jobs. Try other filters</p>
+      <button type="button" onClick={this.profileFail}>
+        Retry
+      </button>
+    </div>
+  )
+
   render() {
-    return <div>{this.renderJobItem()}</div>
+    return (
+      <div className="job-items-bg-container">
+        <Header />
+        {this.renderAllItems()}
+      </div>
+    )
   }
 }
 

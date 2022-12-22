@@ -4,8 +4,27 @@
   background-color: #020202;
   color: #fff;
   padding-left: 4vw;
-  height: 100vh;
-  overflow: scroll;
+  height: 90vh;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.bg {
+  background-color: #020202;
+}
+.failure {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #020202;
+}
+
+.failure::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none;
 }
 
 .jobs-items-bg-container::-webkit-scrollbar {
@@ -21,6 +40,7 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .life-desc {
   margin-left: 2vw;
   width: 60%;
@@ -47,7 +67,4 @@ p {
   margin-left: 5px;
   margin-right: 2px;
   font-size: 16px;
-}
-* {
-  font-family: 'Roboto';
 }
