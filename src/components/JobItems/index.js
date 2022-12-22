@@ -89,7 +89,7 @@ class SimilarJobs extends Component {
 
   renderJobItem = () => {
     const {jobsList, skillsList, life, similarJobList} = this.state
-    // id
+
     const {
       companyLogoUrl,
       companyWebsiteUrl,
@@ -107,7 +107,11 @@ class SimilarJobs extends Component {
     return (
       <div className="job-item-bg-container">
         <div className="row-container">
-          <img src={companyLogoUrl} alt="website logo" className="logo" />
+          <img
+            src={companyLogoUrl}
+            alt="job details company logo"
+            className="logo"
+          />
 
           <div className="left">
             <h1> {title}</h1>
@@ -150,7 +154,7 @@ class SimilarJobs extends Component {
             </a>
           </div>
           <p>{jobDescription}</p>
-          <h1>Skills</h1>
+          <h1>skills</h1>
           <ul className="skill-container">
             {skillsList.map(eachItem => (
               <SkillItem key={eachItem.id} skillItem={eachItem} />
@@ -161,7 +165,7 @@ class SimilarJobs extends Component {
         <h1> Life at Company</h1>
         <div className="row-container">
           <p className="life-desc"> {description}</p>
-          <img src={lifeLogo} alt="life" className="life-image" />
+          <img src={lifeLogo} alt="life_at_company" className="life-image" />
         </div>
 
         <hi>Similar Job</hi>

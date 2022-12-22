@@ -3,17 +3,29 @@
 .jobs-bg-container {
   color: #fff;
   background-color: #020202;
-  min-height: 100vh;
+  min-height: 90vh;
 }
+.search-btn {
+  background-color: #74746b;
+  color: #000000;
+  font-weight: bold;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 5px;
+  margin-left: 10px;
 
+  border: none;
+}
 .jobs-container-row {
   display: flex;
   max-height: 100vh;
   flex-direction: row;
 }
 .jobs-display-container {
+  display: flex;
+  flex-direction: column;
   width: 75vw;
-  height: 80vh;
+  height: 100vh;
   padding-top: 10px;
 }
 
@@ -26,11 +38,12 @@
 
 .profile-container {
   background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
-  padding: 10px 10px 25px 10px;
+  padding: 6px;
+  height: 30vh;
   background-size: cover;
-  margin-top: 4vh;
-  margin-bottom: 5vh;
+  margin-top: 4%;
   margin-left: 20px;
+  border-radius: 10px;
   color: #64748b;
 }
 
@@ -69,16 +82,17 @@ label {
 
   display: flex;
   color: #fff;
-  background-color: #020202;
+  background-color: #fff;
   font-size: 25px;
-  max-width: 230px;
+  width: 50%;
   padding: 5px;
   align-items: center;
-  border: 1px #64748b;
+  border: 1px #fff;
 }
 .search-bar {
   background-color: transparent;
-  color: #fff;
+  color: #020202;
+  width: 80%;
 }
 .loader-container {
   display: flex;
@@ -89,8 +103,9 @@ label {
   justify-content: center;
 }
 .search-icon {
-  background-color: transparent;
   font-size: 14px;
+  border: none;
+  outline: none;
 }
 .jobs {
   background-color: #020202;
@@ -99,7 +114,7 @@ label {
 }
 .jobs-container {
   display: flex;
-  height: 80vh;
+  height: 100%;
   flex-direction: column;
   overflow: scroll;
 }
@@ -110,4 +125,16 @@ label {
   list-style-type: none;
   width: 100%;
   padding-left: 20px;
+}
+.not-found {
+  height: 100%;
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.not-image {
+  height: 200px;
+  width: 250px;
 }

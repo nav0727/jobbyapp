@@ -38,18 +38,23 @@
         */
 
 const CheckBox = props => {
-  const {checkItem} = props
+  const {checkItem, onChangeEmploy} = props
   const {label, employmentTypeId} = checkItem
+
+  const updateEmploy = () => {
+    onChangeEmploy(employmentTypeId)
+  }
 
   return (
     <li>
       <input
         type="checkbox"
-        id={label}
-        name="salary"
+        id={employmentTypeId}
+        name="employment"
         value={employmentTypeId}
+        onChange={updateEmploy}
       />
-      <label htmlFor={label}> {label} </label>
+      <label htmlFor={employmentTypeId}> {label} </label>
     </li>
   )
 }
