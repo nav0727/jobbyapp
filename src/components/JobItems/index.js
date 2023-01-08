@@ -124,37 +124,38 @@ class SimilarJobs extends Component {
 
     return (
       <div className="job-item-bg-container">
-        <div className="row-container">
-          <img
-            src={companyLogoUrl}
-            alt="job details company logo"
-            className="logo"
-          />
+        <div className="col">
+          <div className="row-container">
+            <img
+              src={companyLogoUrl}
+              alt="job details company logo"
+              className="logo"
+            />
 
-          <div className="left">
-            <h1> {title}</h1>
-            <div className="row-container">
-              <AiFillStar className="star" />
+            <div className="left">
+              <h1> {title}</h1>
+              <div className="row-container">
+                <AiFillStar className="star" />
 
-              <p>{rating}</p>
+                <p>{rating}</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="row-container space">
-          <div className="row-container ">
-            <div className="row-container">
-              <HiLocationMarker />
-              <p>{location}</p>
+          <div className="row-container space">
+            <div className="row-container ">
+              <div className="row-container">
+                <HiLocationMarker />
+                <p>{location}</p>
+              </div>
+              <div className="row-container">
+                <IoBagAdd />
+                <p>{employmentType}</p>
+              </div>
             </div>
-            <div className="row-container">
-              <IoBagAdd />
-              <p>{employmentType}</p>
-            </div>
+            <p> {packagePerAnnum}</p>
           </div>
-          <p> {packagePerAnnum}</p>
         </div>
-
         <div>
           <hr className="hr-line" />
 

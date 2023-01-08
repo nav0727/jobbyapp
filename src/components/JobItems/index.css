@@ -1,14 +1,17 @@
 .job-item-bg-container {
   display: flex;
-  flex-direction: column;
   background-color: #020202;
   color: #fff;
   padding-left: 4vw;
-  height: 90vh;
-  overflow: auto;
-  scrollbar-width: none;
+  flex-wrap: wrap;
 }
-
+.jobs-items-bg-container::-webkit-scrollbar {
+  display: none;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
 .bg {
   background-color: #020202;
 }
